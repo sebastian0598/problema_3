@@ -25,10 +25,19 @@ class banco(cliente):
         self.cliente2.extraer_cantidad(int(input("digite la cantidad a extraer: ")))
         self.cliente3.depositar_cantidad(int(input("digite la cantidad a depositar: ")))
         self.cliente3.extraer_cantidad(int(input("digite la cantidad a extraer: ")))
+    def deposito_total(self):
+        self.total =  self.cliente1.devolver_cantidad() + self.cliente2.devolver_cantidad() + self.cliente3.devolver_cantidad()
+    def total_banco(self):
+        print(f"el total del banco es:  {self.total}")
+        self.cliente1.imprimir()
+        self.cliente2.imprimir()
+        self.cliente3.imprimir()
 def main():
     
     banco1 = banco()
     banco1.operacion_banco()
+    banco1.deposito_total()
+    banco1.total_banco()
 
 
 
